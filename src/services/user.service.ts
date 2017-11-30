@@ -5,14 +5,14 @@ import { AssetsService } from './core/assets.service';
 export class UserService {
   items;
   asset;
-  
+
   constructor(public assets: AssetsService ){
     this.items = {};
     this.asset = 'users';
   }
 
-  get( item_id ){
-    return this.assets.get( this.items, this.asset, item_id );
+  get( user_id ){
+    return this.assets.get( this.items, this.asset, user_id );
   }
 
   getAll( ){
