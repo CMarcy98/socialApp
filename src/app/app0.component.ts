@@ -22,7 +22,7 @@ export class MyApp implements OnInit {
   }
 
   ngOnInit(){
-
+  
 
     if ( localStorage.getItem("user_id") !== null){
       this.rootPage = TabsPage;

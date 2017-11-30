@@ -8,7 +8,7 @@ export class UserService {
 
   constructor(public assets: AssetsService ){
     this.items = {};
-    this.asset = 'users';
+    this.asset = 'user';
   }
 
   get( user_id ){

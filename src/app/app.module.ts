@@ -7,12 +7,14 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/loginPage/login.page';
 import { TabsPage } from '../pages/tabs/tabs';
 
 // Services
 import { ApiCallService } from '../services/core/api-call.service';
 import { AssetsService } from '../services/core/assets.service';
 import { UserService } from '../services/user.service';
+import { LoginService } from '../services/login.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,6 +25,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
+	LoginPage,
     TabsPage
   ],
   imports: [
@@ -36,6 +39,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
+	LoginPage,
     TabsPage
   ],
   providers: [
@@ -44,6 +48,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AssetsService,
 	ApiCallService,
 	UserService,
+	LoginService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
