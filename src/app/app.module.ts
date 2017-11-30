@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 // Services
 import { ApiCallService } from '../services/core/api-call.service';
 import { AssetsService } from '../services/core/assets.service';
+import { UserService } from '../services/user.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -39,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
 	AssetsService,
-	ApiCallService
+	ApiCallService,
+	UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
