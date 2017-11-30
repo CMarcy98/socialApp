@@ -8,6 +8,10 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+// Services
+import { ApiCallService } from '../services/core/api-call.service';
+import { AssetsService } from '../services/core/assets.service';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -34,6 +38,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+	AssetsService,
+	ApiCallService
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
