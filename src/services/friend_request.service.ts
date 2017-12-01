@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
 import { AssetsService } from './core/assets.service';
-import { ApiCallService } from './core/api-call.service';
 @Injectable()
 
-export class LoginService {
+export class FriendRequestService {
 	items;
 	asset;
 
-	constructor(public assets: AssetsService, public apiCall: ApiCallService ){
+	constructor(public assets: AssetsService ){
       this.items = {};
-      this.asset = 'login';
+      this.asset = 'friend_request';
     }
 
-    get( first_name, last_name ){
-		return this.apiCall.get(this.asset + "/", {first_name: first_name, last_name: last_name});
+    get( item_id ){
+      return this.assets.get( this.items, this.asset, item_id );
     }
 
-    getAll( ){
-      //return this.assets.getAll( this.items, this.asset );
+    getAll( data ){
+      return this.assets.getAll( this.items, this.asset, data );
     }
 
 	// constructor(public apiCall: ApiCallService ){

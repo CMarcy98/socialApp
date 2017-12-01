@@ -13,7 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 // Services
 import { ApiCallService } from '../services/core/api-call.service';
 import { AssetsService } from '../services/core/assets.service';
-import { UserService } from '../services/user.service';
+import { FriendRequestService } from '../services/friend_request.service';
 import { LoginService } from '../services/login.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -47,7 +47,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
 	AssetsService,
 	ApiCallService,
-	UserService,
+	FriendRequestService,
 	LoginService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

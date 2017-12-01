@@ -10,7 +10,7 @@ export class ApiCallService {
   readonly PUT = 2;
 
 
-  readonly api_url = 'http://localhost/fitTracker_API';
+  readonly api_url = 'http://localhost/socialApp_API';
 
   queue = [];
 

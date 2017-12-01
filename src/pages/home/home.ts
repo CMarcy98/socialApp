@@ -1,19 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { ApiCallService } from '../../services/core/api-call.service';
-import { UserService } from '../../services/user.service';
+import { FriendRequestService } from '../../services/friend_request.service';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
 
-	
+	loading;
+	requestItems;
 
-	constructor(private apiCall: ApiCallService, public users: UserService, public navCtrl: NavController, public navParams: NavParams) {
-
+	constructor(public requests: FriendRequestService, public navCtrl: NavController, public navParams: NavParams) {
+		this.requestItems = [];
+		this.loading = true;
 	}
+
+	ngOnInit(){
+		let data = {
+			id: localStorage.getItem("user_id")
+		};
+      this.requests.getAll(data).then(
+        (requests) => {
+          this.requestItems = requests;
+		  console.log(requests);
+        }
+      );
+
+	  this.loading = false;
+    }
+
+
 
 }

@@ -12,9 +12,10 @@ import { TabsPage } from '../tabs/tabs';
 export class LoginPage implements OnInit {
   first;
   last;
+
   constructor(public navCtrl: NavController, public logins: LoginService) {
-    this.first = "Christian";
-    this.last = "Marcy";
+    this.first = "";
+    this.last = "";
   }
 
   ngOnInit(){
@@ -22,22 +23,19 @@ export class LoginPage implements OnInit {
   }
 
   login(first, last){
-    this.logins.get('/user/', {first_name: first, last_name: last}).then(
+    this.logins.get(first,last).then(
       (result) => {
-        console.log("result", result);
-        localStorage.setItem('user_id', result.data.items[0].id);
-        console.log(localStorage.getItem('id'));
-        this.navCtrl.push(TabsPage);
+		  if(result.data.items.length == 0) {
+			  alert("User is not in system.");
+		  } else {
+			  console.log("result is ", result);
+	  		  localStorage.setItem('user_id', result.data.items[0].id);
+	          console.log("User id is ", localStorage.getItem('user_id'));
+	          this.navCtrl.push(TabsPage);
+		  }
+
       }
       // localStorage.setItem('user_id', result[0]);
-    );
-  }
-
-  newUser(first, last){
-    this.apiCall.post('/user/', {first_name: first, last_name: last}).then(
-      (result) =>{
-        console.log("result", result);
-      }
     );
   }
 

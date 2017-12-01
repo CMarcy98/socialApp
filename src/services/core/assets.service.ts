@@ -34,18 +34,18 @@ export class AssetsService {
 
 
 
-  getAll( items, asset ){
+  getAll( items, asset, data ){
 
     let promise = new Promise( (resolve, reject) => {
 
-        this.apiCall.get('/' + asset + '/', {}).then(
+        this.apiCall.get('/' + asset + '/', data).then(
           (result) => {
 
             let returnArr = [];
 
-            result.data.items.forEach( (lift) => {
-              items[lift.id] = lift;
-              returnArr.push(lift);
+            result.data.items.forEach( (item) => {
+              items[item.id] = item;
+              returnArr.push(item);
             });
             resolve(returnArr);
           }
