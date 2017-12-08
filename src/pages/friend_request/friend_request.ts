@@ -4,12 +4,11 @@ import { NavController, NavParams } from 'ionic-angular';
 import { FriendRequestService } from '../../services/friend_request.service';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-friend_request',
+  templateUrl: 'friend_request.html'
 })
 
-export class HomePage {
-
+export class FriendRequestPage {
 	loading;
 	requestItems;
 

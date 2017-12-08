@@ -4,9 +4,9 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
+import { FeedPage } from '../pages/feed/feed';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { FriendRequestPage } from '../pages/friend_request/friend_request';
 import { LoginPage } from '../pages/loginPage/login.page';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -27,9 +27,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    FeedPage,
     ContactPage,
-    HomePage,
+    FriendRequestPage,
 	LoginPage,
     TabsPage,
 	UserPreviewComponent,
@@ -43,9 +43,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    FeedPage,
     ContactPage,
-    HomePage,
+    FriendRequestPage,
 	LoginPage,
     TabsPage
   ],

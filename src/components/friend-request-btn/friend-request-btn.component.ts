@@ -15,9 +15,11 @@ export class FriendRequestBtnComponent {
 	@Input('user-id') user_id;
 	loading;
 	user;
+	text;
 
 	constructor(public users: UserService, public requests: FriendRequestService) {
 		this.loading = true;
+		this.text = "Accept";
 	}
 
 	ngOnInit() {
@@ -37,11 +39,12 @@ export class FriendRequestBtnComponent {
 		console.log("I am ", localStorage.getItem("user_id"));
 		console.log("I am requesting ", this.user_id);
 
-		// this.requests.put(data).then(
-		// 	(result) => {
-		// 		console.log("Result of accept request: ", result);
-		// 	}
-		// );
+		this.requests.put(data).then(
+			(result) => {
+				console.log("Result of accept request: ", result);
+				this.text = "Accepted!";
+			}
+		);
 	}
 
 
