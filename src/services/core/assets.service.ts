@@ -57,4 +57,8 @@ export class AssetsService {
     return promise;
   }
 
+  put ( asset, data ) {
+        return  this.apiCall.put('/' + asset + '/', data);
+  }
+
  };

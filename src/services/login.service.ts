@@ -13,7 +13,11 @@ export class LoginService {
     }
 
     get( first_name, last_name ){
-		return this.apiCall.get(this.asset + "/", {first_name: first_name, last_name: last_name});
+		let data = {
+			first_name: first_name,
+			last_name: last_name
+		};
+		return this.apiCall.get(this.asset + "/", data);
     }
 
     getAll( ){

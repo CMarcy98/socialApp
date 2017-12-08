@@ -1,0 +1,15 @@
+<ion-item *ngIf="!loading">
+	<!-- <p class="name">{{ user.first_name }} {{ user.last_name}}<p> -->
+	<!-- <button ion-button colot="light">Accept Request</button> -->
+	<ion-thumbnail item-start>
+      <img src="../../assets/imgs/apple_square.jpg">
+    </ion-thumbnail>
+
+	<h2>{{ user.first_name }} {{ user.last_name}}</h2>
+    <p>Future info here</p>
+
+	<friend-request-btn item-end user-id="{{ user_id }}"></friend-request-btn>
+
+    <!-- <button ion-button clear item-end (click)="acceptRequest()">Accept</button> -->
+	<!-- {{ user.id }} is {{ user.first_name }} -->
+</ion-item>

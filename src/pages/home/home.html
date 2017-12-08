@@ -1,12 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Feed</ion-title>
+    <ion-title>Friend Requests</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 	<div *ngIf='loading'>Loading...</div>
-    <!-- <div *ngIf='!loading' *ngFor='let request of requestItems'>
-
-    </div> -->
+	<ion-list>
+		<user-preview *ngFor='let request of requestItems' user-id="{{ request.user_2 }}"></user-preview>
+	</ion-list>
+    <!-- <user-preview  user-id="2"></user-preview> -->
 </ion-content>

@@ -19,6 +19,10 @@ export class FriendRequestService {
       return this.assets.getAll( this.items, this.asset, data );
     }
 
+	put( data ) {
+		return this.assets.put(this.asset, data);
+	}
+
 	// constructor(public apiCall: ApiCallService ){
 	// 	this.items = {};
 	// 	this.asset = 'login';

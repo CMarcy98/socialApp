@@ -23,6 +23,8 @@ export class LoginPage implements OnInit {
   }
 
   login(first, last){
+	  console.log("First name is ", first);
+	  console.log("Last name is ", last);
     this.logins.get(first,last).then(
       (result) => {
 		  if(result.data.items.length == 0) {

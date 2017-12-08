@@ -15,8 +15,8 @@ export class UserService {
     return this.assets.get( this.items, this.asset, user_id );
   }
 
-  getAll( ){
-    return this.assets.getAll( this.items, this.asset );
+  getAll( data ){
+    return this.assets.getAll( this.items, this.asset, data );
   }
 
  };

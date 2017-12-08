@@ -10,11 +10,16 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/loginPage/login.page';
 import { TabsPage } from '../pages/tabs/tabs';
 
+//Components
+import { UserPreviewComponent } from '../components/user-preview/user-preview.component';
+import { FriendRequestBtnComponent } from '../components/friend-request-btn/friend-request-btn.component';
+
 // Services
 import { ApiCallService } from '../services/core/api-call.service';
 import { AssetsService } from '../services/core/assets.service';
 import { FriendRequestService } from '../services/friend_request.service';
 import { LoginService } from '../services/login.service';
+import { UserService } from '../services/user.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +31,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
 	LoginPage,
-    TabsPage
+    TabsPage,
+	UserPreviewComponent,
+	FriendRequestBtnComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +56,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	ApiCallService,
 	FriendRequestService,
 	LoginService,
+	UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
