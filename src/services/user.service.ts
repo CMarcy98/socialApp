@@ -11,12 +11,20 @@ export class UserService {
     this.asset = 'user';
   }
 
-  get( user_id ){
-    return this.assets.get( this.items, this.asset, user_id );
+  config(item){
+	  let promise = new Promise( (resolve, reject) => {
+		  /* Do your code here */
+		  resolve(item);
+	  });
+	  return promise;
+  }
+
+  get( item_id ){
+	return this.assets.get( this.items, this.asset, item_id, this.config );
   }
 
   getAll( data ){
-    return this.assets.getAll( this.items, this.asset, data );
+	return this.assets.getAll( this.items, this.asset, data, this.config );
   }
 
  };

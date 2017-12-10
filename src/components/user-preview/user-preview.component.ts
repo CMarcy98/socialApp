@@ -24,7 +24,6 @@ export class UserPreviewComponent {
 
 		this.users.get(this.user_id).then(
           (user) => {
-			console.log(user);
             this.user = user;
 			this.loading = false;
   		  //console.log(requests);

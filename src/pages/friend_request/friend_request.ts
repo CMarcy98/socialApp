@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { FriendRequestService } from '../../services/friend_request.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'page-friend_request',
@@ -10,21 +10,26 @@ import { FriendRequestService } from '../../services/friend_request.service';
 
 export class FriendRequestPage {
 	loading;
-	requestItems;
+	users;
+	id;
 
-	constructor(public requests: FriendRequestService, public navCtrl: NavController, public navParams: NavParams) {
-		this.requestItems = [];
+	constructor(public usersService: UserService, public navCtrl: NavController, public navParams: NavParams) {
+		this.users = [];
 		this.loading = true;
+		this.id = localStorage.getItem("user_id");
 	}
 
 	ngOnInit(){
 		let data = {
-			id: localStorage.getItem("user_id")
+			my_id: localStorage.getItem("user_id"),
+			not_me: true,
+			is_friend: 0
 		};
-      this.requests.getAll(data).then(
-        (requests) => {
-          this.requestItems = requests;
-		  console.log(requests);
+
+      this.usersService.getAll(data).then(
+        (users) => {
+			console.log(users);
+			this.users = users;
         }
       );
 

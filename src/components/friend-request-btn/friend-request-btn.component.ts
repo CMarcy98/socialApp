@@ -13,6 +13,7 @@ import { FriendRequestService } from '../../services/friend_request.service';
 
 export class FriendRequestBtnComponent {
 	@Input('user-id') user_id;
+	items;
 	loading;
 	user;
 	text;
@@ -20,14 +21,33 @@ export class FriendRequestBtnComponent {
 	constructor(public users: UserService, public requests: FriendRequestService) {
 		this.loading = true;
 		this.text = "Accept";
+		this.items = [];
 	}
 
 	ngOnInit() {
+		let data = {
+			other_id: this.user_id,
+			my_id: localStorage.getItem("user_id")
+		};
 
+		this.requests.getAll(data).then(
+			(item) => {
+				if(item.length == 0) {
+					console.log("Not friends with ", data.other_id);
+				} else if(!item.accepted) {
+					console.log("Pending friend request", data.other_id);
+				} else {
+					console.log("Friends already with ", data.other_id);
+				}
+				//console.log(item);
+			}
+		);
+		// console.log(data.user_2);
     }
 
 
 	// Updates is_friend field in friendrequest table
+
 	acceptRequest() {
 		//alert("Accecpted friend request!");
 		let data = {

@@ -8,7 +8,7 @@ export class AssetsService {
 
   }
 
-  get( items, asset, item_id ){
+  get( items, asset, item_id, config ){
 
     let promise = new Promise( (resolve, reject) => {
 
@@ -17,9 +17,13 @@ export class AssetsService {
                 //not set - download from server
                 this.apiCall.get('/' + asset + '/', {id: item_id}).then(
                   (result) => {
-                    items[item_id] = result.data.items[0];
-                    resolve( items[item_id] );
-                  }
+					  console.log(result);
+					  config(result.data.items[0]).then(
+						  (item)=>{
+			                    items[item_id] = item;
+			                    resolve( item );
+						  });
+                  	}
                 );
               } else {
                 console.log(" Retrived from cache ")
@@ -28,13 +32,14 @@ export class AssetsService {
 
     });
 
+
     return promise;
   }
 
 
 
 
-  getAll( items, asset, data ){
+  getAll( items, asset, data, config ){
 
     let promise = new Promise( (resolve, reject) => {
 
@@ -44,7 +49,10 @@ export class AssetsService {
             let returnArr = [];
 
             result.data.items.forEach( (item) => {
-              items[item.id] = item;
+
+				config(item).then((result_item)=>{
+	              items[item.id] = result_item;
+				});
               returnArr.push(item);
             });
             resolve(returnArr);

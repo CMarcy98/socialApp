@@ -7,7 +7,8 @@
 <ion-content padding>
 	<div *ngIf='loading'>Loading...</div>
 	<ion-list>
-		<user-preview *ngFor='let request of requestItems' user-id="{{ request.user_2 }}"></user-preview>
+		<user-preview *ngFor='let user of users' user-id="{{ user.id }}"></user-preview>
+		<!-- <user-preview user-id="{{ id }}"></user-preview> -->
 	</ion-list>
     <!-- <user-preview  user-id="2"></user-preview> -->
 </ion-content>
