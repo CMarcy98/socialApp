@@ -1,15 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
+
+import { FeedItemService } from '../../services/feed_item.service';
 
 
 @Component({
-  selector: 'page-feed',
+  selector: 'feed-page',
   templateUrl: 'feed.html'
 })
 export class FeedPage {
+	feedItems;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public feeds: FeedItemService) {
+	  this.feedItems = [];
+  }
+
+  ngOnInit() {
+
+	  this.feeds.getAll().then(
+	  	(item) => {
+	  		console.log("Everything is ", item);
+	  	}
+	  );
 
   }
+
+
 
 }

@@ -32,13 +32,17 @@ export class FriendRequestBtnComponent {
 
 		this.requests.getAll(data).then(
 			(item) => {
-				if(item.length == 0) {
-					console.log("Not friends with ", data.other_id);
-				} else if(!item.accepted) {
-					console.log("Pending friend request", data.other_id);
-				} else {
-					console.log("Friends already with ", data.other_id);
+				console.log("Item returned is ", item);
+				if(item != undefined) {
+					if(item.length == 0) {
+						console.log("Not friends with ", data.other_id);
+					} else if(!item.accepted) {
+						console.log("Pending friend request", data.other_id);
+					} else {
+						console.log("Friends already with ", data.other_id);
+					}
 				}
+
 				//console.log(item);
 			}
 		);

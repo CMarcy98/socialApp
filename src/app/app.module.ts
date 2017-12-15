@@ -4,22 +4,26 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 
+// PAGES
 import { FeedPage } from '../pages/feed/feed';
 import { ContactPage } from '../pages/contact/contact';
 import { FriendRequestPage } from '../pages/friend_request/friend_request';
 import { LoginPage } from '../pages/loginPage/login.page';
 import { TabsPage } from '../pages/tabs/tabs';
+import { HomePage } from '../pages/home/home';
 
-//Components
+// COMPONENTS
 import { UserPreviewComponent } from '../components/user-preview/user-preview.component';
+import { FeedPreviewComponent } from '../components/feed-preview/feed-preview.component';
 import { FriendRequestBtnComponent } from '../components/friend-request-btn/friend-request-btn.component';
 
-// Services
+// SERVICES
 import { ApiCallService } from '../services/core/api-call.service';
 import { AssetsService } from '../services/core/assets.service';
 import { FriendRequestService } from '../services/friend_request.service';
 import { LoginService } from '../services/login.service';
 import { UserService } from '../services/user.service';
+import { FeedItemService } from '../services/feed_item.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,8 +35,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     FriendRequestPage,
 	LoginPage,
+	HomePage,
     TabsPage,
 	UserPreviewComponent,
+	FeedPreviewComponent,
 	FriendRequestBtnComponent
   ],
   imports: [
@@ -47,6 +53,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     FriendRequestPage,
 	LoginPage,
+	HomePage,
     TabsPage
   ],
   providers: [
@@ -55,6 +62,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AssetsService,
 	ApiCallService,
 	FriendRequestService,
+	FeedItemService,
 	LoginService,
 	UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
