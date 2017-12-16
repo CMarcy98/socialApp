@@ -11,7 +11,8 @@ import { FeedItemService } from '../../services/feed_item.service';
 })
 
 export class FeedPreviewComponent {
-
+	@Input('type-id') type_id;
+	@Input('object-id') object_id;
 
 	constructor() {
 

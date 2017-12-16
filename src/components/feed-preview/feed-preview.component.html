@@ -1,1 +1,8 @@
-<button ion-button clear>Button</button>
+<div *ngIf='type_id == 1'>
+	<button ion-button clear>Type id of 1</button>
+</div>
+
+<div *ngIf='type_id == 2'>
+	<feed-image-preview object-id="{{ object_id }}"></feed-image-preview>
+	<!-- <button ion-button clear>Type id of 2</button> -->
+</div>

@@ -17,9 +17,10 @@ export class FeedPage {
 
   ngOnInit() {
 
-	  this.feeds.getAll().then(
-	  	(item) => {
-	  		console.log("Everything is ", item);
+	  this.feeds.getAll({}).then(
+	  	(feedItems) => {
+			console.log("Everything is ", feedItems);
+			this.feedItems = feedItems;
 	  	}
 	  );
 

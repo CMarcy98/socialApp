@@ -16,6 +16,7 @@ import { HomePage } from '../pages/home/home';
 import { UserPreviewComponent } from '../components/user-preview/user-preview.component';
 import { FeedPreviewComponent } from '../components/feed-preview/feed-preview.component';
 import { FriendRequestBtnComponent } from '../components/friend-request-btn/friend-request-btn.component';
+import { FeedImagePreviewComponent } from '../components/feed-image-preview/feed-image-preview.component';
 
 // SERVICES
 import { ApiCallService } from '../services/core/api-call.service';
@@ -24,6 +25,8 @@ import { FriendRequestService } from '../services/friend_request.service';
 import { LoginService } from '../services/login.service';
 import { UserService } from '../services/user.service';
 import { FeedItemService } from '../services/feed_item.service';
+import { FeedImageService } from '../services/feed_image.service';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -39,6 +42,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
 	UserPreviewComponent,
 	FeedPreviewComponent,
+	FeedImagePreviewComponent,
 	FriendRequestBtnComponent
   ],
   imports: [
@@ -63,6 +67,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	ApiCallService,
 	FriendRequestService,
 	FeedItemService,
+	FeedImageService,
 	LoginService,
 	UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
