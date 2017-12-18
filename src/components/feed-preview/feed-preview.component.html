@@ -14,4 +14,20 @@
 	<div *ngIf='type_id == 2'>
 		<feed-image-preview object-id="{{ object_id }}"></feed-image-preview>
 	</div>
+
+
+	<div class="below-pic">
+		<div class="interactions">
+			<ion-icon name="heart-outline" (click)="clickLike()" id="heart"></ion-icon>
+			<ion-icon name="ios-chatbubbles-outline"></ion-icon>
+		</div>
+
+		<div>
+			<p>This is a comment!</p>
+			<p>This is another comment right below it</p>
+			<p>This is the most recent comment, fill me in from the database</p>
+		</div>
+	</div>
+
+
 </div>
