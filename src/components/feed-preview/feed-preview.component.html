@@ -1,8 +1,17 @@
-<div *ngIf='type_id == 1'>
-	<button ion-button clear>Type id of 1</button>
-</div>
+<div>
+	<ion-item class="bottom-padding">
+		<ion-avatar item-start>
+	      <img *ngIf="!loading" src="{{user.picture}}">
+	    </ion-avatar>
+		<h4 *ngIf="!loading" class="username">{{ user.username }}</h4>
+		<p>(Add location here...)</p>
+	</ion-item>
 
-<div *ngIf='type_id == 2'>
-	<feed-image-preview object-id="{{ object_id }}"></feed-image-preview>
-	<!-- <button ion-button clear>Type id of 2</button> -->
+	<div *ngIf='type_id == 1'>
+		<button ion-button clear>Type id of 1</button>
+	</div>
+
+	<div *ngIf='type_id == 2'>
+		<feed-image-preview object-id="{{ object_id }}"></feed-image-preview>
+	</div>
 </div>

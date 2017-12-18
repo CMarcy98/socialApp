@@ -19,7 +19,6 @@ export class FeedPage {
 
 	  this.feeds.getAll({}).then(
 	  	(feedItems) => {
-			console.log("Everything is ", feedItems);
 			this.feedItems = feedItems;
 	  	}
 	  );

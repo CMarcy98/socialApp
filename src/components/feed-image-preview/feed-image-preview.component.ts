@@ -12,7 +12,7 @@ import { FeedImageService } from '../../services/feed_image.service';
 
 export class FeedImagePreviewComponent {
 	@Input('object-id') object_id;
-	pic_url;
+	image;
 
 	constructor(public images: FeedImageService) {
 
@@ -22,8 +22,7 @@ export class FeedImagePreviewComponent {
 
 		this.images.get(this.object_id).then(
           (item) => {
-			  console.log("Testing with", item);
-			  this.pic_url = item.pic_url;
+			  this.image = item.pic_url;
           }
         );
 

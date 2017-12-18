@@ -17,7 +17,7 @@ export class AssetsService {
                 //not set - download from server
                 this.apiCall.get('/' + asset + '/', {id: item_id}).then(
                   (result) => {
-					  console.log(result);
+					  // console.log(result);
 					  config(result.data.items[0]).then(
 						  (item)=>{
 			                    items[item_id] = item;

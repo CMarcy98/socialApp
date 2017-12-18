@@ -7,8 +7,9 @@
 </ion-header>
 
 <ion-content padding>
-    <!-- <user-preview  user-id="1"></user-preview> -->
-	Hello
-
-	<feed-preview *ngFor='let feedItem of feedItems' type-id={{feedItem.type_id}} object-id={{feedItem.object_id}}></feed-preview>
+	<feed-preview *ngFor='let feedItem of feedItems'
+					type-id={{feedItem.type_id}}
+					object-id={{feedItem.object_id}}
+					user-id={{feedItem.user_id}}>
+	</feed-preview>
 </ion-content>

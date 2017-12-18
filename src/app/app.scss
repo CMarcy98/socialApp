@@ -14,3 +14,17 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+ion-app.ios [padding] .scroll-content {
+    // padding-right: 0;
+	padding: 16px 0;
+}
+
+.item-ios {
+	padding-right: 16px;
+}
+
+.label-ios {
+	margin-right: 0;
+}
