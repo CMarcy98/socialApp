@@ -10,7 +10,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { FriendRequestPage } from '../pages/friend_request/friend_request';
 import { LoginPage } from '../pages/loginPage/login.page';
 import { TabsPage } from '../pages/tabs/tabs';
-import { HomePage } from '../pages/home/home';
+import { ProfilePage } from '../pages/profile/profile';
+import { AddPage } from '../pages/add/add';
 
 // COMPONENTS
 import { UserPreviewComponent } from '../components/user-preview/user-preview.component';
@@ -38,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     FriendRequestPage,
 	LoginPage,
-	HomePage,
+	ProfilePage,
+	AddPage,
     TabsPage,
 	UserPreviewComponent,
 	FeedPreviewComponent,
@@ -57,7 +59,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     FriendRequestPage,
 	LoginPage,
-	HomePage,
+	ProfilePage,
+	AddPage,
     TabsPage
   ],
   providers: [

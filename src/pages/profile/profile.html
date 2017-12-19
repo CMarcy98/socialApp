@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="!loading">
+    	{{ user.username }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div>
+		<img src="{{ user.picture }}" id="profile-picture">
+	</div>
+
+	<div>
+		<h2>{{ user.first_name }} {{ user.last_name }}</h2>
+	</div>
+</ion-content>

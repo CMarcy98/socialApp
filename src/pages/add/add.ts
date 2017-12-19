@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { TabsPage } from '../tabs/tabs';
-
-
 @Component({
-  selector: 'home-Page',
-  templateUrl: 'home.html'
+  selector: 'page-add',
+  templateUrl: 'add.html'
 })
-export class HomePage {
+export class AddPage {
 
   constructor(public navCtrl: NavController) {
 

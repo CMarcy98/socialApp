@@ -28,7 +28,7 @@ export class FeedPreviewComponent {
 			(user) => {
 				this.user = user;
 				this.loading = false;
-				console.log("User retrieved", user);
+				// console.log("User retrieved", user);
 			}
 		);
 	}
